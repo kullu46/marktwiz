@@ -11,6 +11,5 @@ hydrate(
       <App />
     </Router>
   </Provider>,
-
   document.getElementById("root")
 );
