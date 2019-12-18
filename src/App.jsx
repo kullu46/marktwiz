@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import routeOptions from "./routes/route";
-import "./index.scss";
-import "./App.less";
+import "./assets/css/style.css";
 import Header from "./components/header/index";
 import Footer from "./components/footer/index";
 
