@@ -46,15 +46,17 @@
   <script src='%PUBLIC_URL%/assets/js/timelinemax.js'></script>
   <script src='%PUBLIC_URL%/assets/js/draggable.min.js'></script>
   <script src='%PUBLIC_URL%/assets/js/pagepiling.js'></script>
-  <script src="%PUBLIC_URL%/assets/js/custom.js"></script>
+  <!--script src="%PUBLIC_URL%/assets/js/custom.js"></script>
   <script type="text/javascript">
 		$(document).ready(function() {
+      if($('#slides').length){
 	    	$('#slides').pagepiling({
 	          	direction: 'horizontal',
 			    setAllowScrolling: true,
 			    sectionsColor: ['white', 'white', '#0a1143', 'white'],
 			    navigation: false,
-			});
-	    });
-    </script>
+        });
+      }
+    });
+  </script-->
 </html>

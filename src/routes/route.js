@@ -1,5 +1,6 @@
 import Login from "../components/login/index";
 import Home from "../components/home/index";
+import Services from "../components/services/index";
 export default {
   routes: [
     {
@@ -10,6 +11,11 @@ export default {
     {
       path: "/",
       component: Home,
+      exact: true
+    },
+    {
+      path: "/services",
+      component: Services,
       exact: true
     }
   ]

@@ -74,7 +74,13 @@ tl.to('#loader', 1, {
 
 	}
 });
-
-
-
-
+$(document).ready(function() {
+	if($('#slides').length){
+			$('#slides').pagepiling({
+				direction: 'horizontal',
+				setAllowScrolling: true,
+				sectionsColor: ['white', 'white', '#0a1143', 'white'],
+				navigation: false,
+		});
+	}
+});
