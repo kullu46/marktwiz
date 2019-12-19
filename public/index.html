@@ -39,23 +39,22 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="%PUBLIC_URL%/assets/js/jquery.js"></script>
-    <script src='%PUBLIC_URL%/assets/js/tween-max.min.js'></script>
-    <!--script src="%PUBLIC_URL%/assets/js/CSSPlugin.js"></script>
-    <script src='%PUBLIC_URL%/assets/js/pagepiling.js'></script>
-    <script src='%PUBLIC_URL%/assets/js/timelinemax.js'></script-->
-    <script src="%PUBLIC_URL%/assets/js/custom.js"></script>
-    <!--script type="text/javascript">
-      window.onload = function() {
-        setTimeout(function(){
-          jQuery('#slides').pagepiling({
-            direction: 'horizontal',
-            setAllowScrolling: true,
-            sectionsColor: ['white', 'white', '#0a1143', 'white'],
-            navigation: false,
-          });
-        }, 4000);
-      }
-    </script-->
   </body>
+  <script src="%PUBLIC_URL%/assets/js/jquery.js"></script>
+  <script src="%PUBLIC_URL%/assets/js/CSSPlugin.js"></script>
+  <script src='%PUBLIC_URL%/assets/js/tween-max.min.js'></script>
+  <script src='%PUBLIC_URL%/assets/js/timelinemax.js'></script>
+  <script src='%PUBLIC_URL%/assets/js/draggable.min.js'></script>
+  <script src='%PUBLIC_URL%/assets/js/pagepiling.js'></script>
+  <script src="%PUBLIC_URL%/assets/js/custom.js"></script>
+  <script type="text/javascript">
+		$(document).ready(function() {
+	    	$('#slides').pagepiling({
+	          	direction: 'horizontal',
+			    setAllowScrolling: true,
+			    sectionsColor: ['white', 'white', '#0a1143', 'white'],
+			    navigation: false,
+			});
+	    });
+    </script>
 </html>

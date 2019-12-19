@@ -67,10 +67,10 @@ tl.to('#loader', 1, {
 		  // Slider Wrapper Animation
 		  .to('#slider-wrapper', 0, {y: "-200%", height: "100vh"}, "-=2")
 		  .to('#slider-wrapper', 2, {opacity: 1}, "-=.5")
-		  loadingTl.fromTo('#slider-wrapper #slide-1 .movingImg', 15, {scale:.9}, {scale: 1.1}, "ease: Power2.easeInOut")
-		  loadingTl.fromTo('#slider-wrapper #slide-2 .movingImg', 15, {scale:.9}, {scale: 1.1}, "ease: Power2.easeInOut", "+=5")
-		  loadingTl.fromTo('#slider-wrapper #slide-3 .movingImg', 15, {scale:1}, {scale: 1.2}, "ease: Power2.easeInOut")
-		  loadingTl.fromTo('#slider-wrapper #slide-4 .movingImg', 20, {scale:.9}, {scale: 1.1}, "ease: Power2.easeInOut")
+		  loadingTl.fromTo('#slider-wrapper #slide-1 .movingImg', 25, {scale:.9}, {scale: 1.1}, "ease: Power2.easeInOut")
+		  loadingTl.fromTo('#slider-wrapper #slide-2 .movingImg', 25, {scale:.9}, {scale: 1.1}, "ease: Power2.easeInOut", "+=5")
+		  loadingTl.fromTo('#slider-wrapper #slide-3 .movingImg', 25, {scale:.9}, {scale: 1.2}, "ease: Power2.easeInOut")
+		  loadingTl.fromTo('#slider-wrapper #slide-4 .movingImg', 25, {scale:.9}, {scale: 1.1}, "ease: Power2.easeInOut")
 
 	}
 });
