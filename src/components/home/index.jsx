@@ -108,7 +108,7 @@ export default class Home extends Component {
                 <div className="row h-100">
                   <div className="align-items-start col-lg-5 d-flex flex-column justify-content-center pl-lg-5 pl-md-2">
                     <h3>Together We Create Magic</h3>
-                    <button className="btn mt-5" onClick={() => this.props.history.push('/services')}>Check Services <img src={imgArrowBlack} alt="arrow" className="img-fluid" /></button>
+                    <button className="btn mt-5" onClick={() => this.props.history.push('/services/')}>Check Services <img src={imgArrowBlack} alt="arrow" className="img-fluid" /></button>
                   </div>
                   <div className="col-lg-7 d-flex justify-content-end align-items-end">
                     <img src={imgMagic} alt="Marktwiz" className="img-fluid movingImg" />

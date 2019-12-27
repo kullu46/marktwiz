@@ -1,0 +1,349 @@
+.wrap{
+    max-width:1170px;
+    padding:0 15px;
+    margin: 0 auto;
+    width: 100%;
+    @media(min-width: 1440px){
+        max-width: 1260px;
+    }
+    @media(min-width: 1600px){
+        max-width: 1330px;
+    }
+    @media(min-width: 1700px){
+        max-width: 1430px;
+    }
+    @media(min-width: 1900px){
+        max-width: 1630px;
+    }
+    
+}
+.wrap-lg{
+    max-width:1200px;
+    padding:0 15px;
+    margin: 0 auto;
+    width: 100%;
+}
+.wrap-md{
+    max-width:700px;
+    padding:0 15px;
+    margin: 0 auto;
+    width: 100%;
+}
+.wrap-xs{
+    max-width:400px;
+    padding:0 15px;
+    margin: 0 auto;
+    width: 100%;
+}
+.row{
+    @include make-row()
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.img-responsive{
+    max-width: 100%;
+    widows: 100%;
+}
+.full-width{
+    @include make-col-ready();
+}
+.half-width{
+    @include make-col-ready();
+    @include media-breakpoint-up(md) {
+        @include make-col(6);
+     }
+}
+.clear-fix{
+    clear: both;
+    height: 1px;
+    display: block;
+}
+.hidden{
+	opacity: 0;
+}
+
+.visible{
+	opacity: 1;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+  }
+  
+  .clearfix:after {
+    clear: both;
+  }
+  
+  .clearfix {
+    zoom: 1;
+  }
+.wrap-lg1{
+    max-width:800px;
+    padding:0 15px;
+    margin: 0 auto;
+}
+.half-width1{
+    @include make-col-ready();
+    @include media-breakpoint-up(xs) {
+        @include make-col(6);
+     }
+}
+.img-responsive1{
+    max-width: 230px;
+    width: 100%;
+    height:auto;
+    }
+.img-responsive2{
+    max-width: 380px;
+    height:auto;
+    @include media-breakpoint-up(sm) {
+    max-width: 500px;
+    }
+    @include media-breakpoint-up(md) {
+    max-width: 600px;
+    }
+    width: 100%;
+}
+.img-responsive3{
+    max-width: 340px;
+    height:auto;
+    @include media-breakpoint-up(sm) {
+    max-width: 400px;
+    }
+    @include media-breakpoint-up(md) {
+    max-width: 500px;
+    }
+     width: 100%;
+}  
+
+body{
+    &.menu-active{
+        overflow: hidden;
+    }
+    &.logged-in{
+        position: static !important;       
+    }
+    
+}
+
+.logged-in .navigation-top {
+    @include media-breakpoint-up(md) {
+        top: 47px;
+    }
+    @include media-breakpoint-up(lg) {
+    top: 34px;
+    }
+    
+}
+
+
+.entry-content{
+    margin-top: 40px;
+}
+
+.page-bottom-links{
+    padding: 0px 0 30px;
+    p{
+        margin: 0px !important;
+        padding: 0px;
+        br{
+            display: none;
+        }
+    }
+    strong{
+        color: $dark-gray;
+        font-weight: 600;
+        margin: 30px 0 10px;
+        display: inline-block;
+        width: 100%;
+    }
+    a{
+        margin: 5px 0px;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        @include fontSize (14px);
+        &:hover{
+            color: $black;
+        }
+    }
+}
+
+img.aligncenter {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.owl-dots {
+	text-align: center;
+	line-height: 1;
+	margin-top: 25px;
+	button{
+		&:not(:last-child) {
+			margin-right: 8px;
+		}
+		&.active{
+			span{
+				opacity: 1;
+				@include transform(scale(1.4));	
+			}
+		}
+	}
+	span {
+		display: block;
+		border-radius: 50%;
+		background-color: #0c5adb;
+		opacity: 0.302;
+		width: 6px;
+		height: 6px;
+		@include transition(all 0.4s ease);
+		-webkit-transform-origin: center center;
+		-ms-transform-origin: center center;
+		transform-origin: center center;
+	}
+}
+
+
+
+.heading{
+    text-align: center;
+    padding: 0 15px;
+    margin-bottom: 10px;
+    display: table;
+    width: 100%;
+    h2{
+        color: $theme-main-color;
+        @include fontSize(36px);
+        font-weight: 500;
+        line-height: 1.5em;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        &:after{
+            display: block;
+            content: "";
+            height: 1.5px;
+            width: 30%;
+            background: $theme-main-color;
+            margin: 15px auto;
+        }
+    }
+    h4{
+        color: $black-2;
+        @include fontSize(16px);        
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+html, body {
+    height: 100%;
+}
+
+.site, .site-content-contain, .site-content {
+    height: 100%;
+}
+rs-fullwidth-wrap{
+    a#slider-2-slide-11-layer-10.rev-btn {
+        width: 100% !important;
+        height: 55px !important;
+        padding: 11px 25px !important;
+        font-size: 16px !important;
+        line-height: 33px !important;
+    }
+}
+
+
+.wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px;
+    width: 100%;
+  }
+  .wrap900 {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px;
+    width: 100%;
+  }
+  .wrap600 {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px;
+    width: 100%;
+  }
+  .wrap1500 {
+    max-width: 1500px;
+    display: flex;
+    @include justify-content(space-between);
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px;
+    width: 100%;
+  }
+  .row {
+    @include make-row;
+  }
+  .full-width {
+    @include make-col-ready();
+    @include media-breakpoint-up(md) {
+      @include make-col(12);
+    }
+  }
+  .half-width {
+    @include make-col-ready();
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+  }
+  .clear-fix {
+    clear: both;
+    display: block;
+    height: 1px;
+  }
+  a {
+    @include fontSize(16px);
+  }
+  
+  p {
+    @include fontSize(13px);
+    @include media-breakpoint-up(md) {
+      @include fontSize(16px);
+    }
+  }
+  
+  .app-container {
+    .app-container_outer {
+      @include flexbox;
+      min-height: 100vh;
+      @include flex-direction(column);
+      margin: 0;
+    }
+    .app-main {
+      @include flex(1);
+      @include flexbox;
+      .app-main__outer {
+        @include flex(1);
+        @include flex-direction(column);
+        @include flexbox;
+      }
+    }
+  }
+.all-services{
+    ul{
+        li{cursor: pointer;}
+    }
+}

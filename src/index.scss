@@ -12,8 +12,23 @@
 @import "./assets/scss/mixins";
 @import "./assets/scss/reboot";
 @import "./assets/scss/root";
-
 @import "./assets/scss/bootstrap-grid";
+
+@import "./assets/theme/theme_fonts";
 @import "./assets/scss/type";
 @import "./assets/theme/pagepiling";
 @import "./assets/theme/slider";
+
+@import "./assets/theme/mixin-theme";
+@import "./assets/theme/common";
+@import "./assets/theme/page_404";
+@import "./assets/theme/header";
+@import "./assets/theme/all-services";
+@import "./assets/theme/real-estate";
+@import "./assets/theme/advertisement";
+@import "./assets/theme/lead-generation";
+@import "./assets/theme/contact-page";
+@import "./assets/theme/social-media-management";
+@import "./assets/theme/digital-strategy";
+@import "./assets/theme/branding-identity";
+@import "./assets/theme/website-mobile";
