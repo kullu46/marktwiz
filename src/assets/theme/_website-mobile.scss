@@ -37,7 +37,7 @@
                 text-align: center;
                 @include media-breakpoint-up(md) {
                     text-align: left;
-                    padding: 0px 15px;
+                    padding: 0px 5px;
                 }
                 @media(min-width: 1400px) {
                     margin-bottom: 30px;

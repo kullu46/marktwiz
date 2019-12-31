@@ -8,6 +8,8 @@ import imgContact from '../../assets/images/home-slider/slides/contact.png';
 import imgDigitalProducts from '../../assets/images/home-slider/slides/digitalProductsServices.png';
 import imgInnovative from '../../assets/images/home-slider/slides/innovative.png';
 import imgMagic from '../../assets/images/home-slider/slides/magic.png';
+import imgLoadingBg from '../../assets/images/background-images-landing.jpg';
+import imgLoadingTextSep from '../../assets/images/Shape-638.png';
 //import imgArrowWhite from '../../assets/images/home-slider/arrow.png';
 import imgArrowBlack from '../../assets/images/home-slider/arrow-b.png';
 import Imglogo from '../../assets/images/logo.png';
@@ -34,7 +36,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="HomeSliderMain">
-        <section id="loader" className="h-100">
+        <section id="loader" className="h-100"  style={{backgroundImage: "url(" + imgLoadingBg + ")"}}>
           <div className="petals">
             <img src={imgPetals1} alt="Marktwiz" className="img-fluid petal-1"/>
             <img src={imgPetals2} alt="Marktwiz" className="img-fluid petal-2"/>
@@ -45,33 +47,35 @@ export default class Home extends Component {
           <div className="content d-flex align-items-center justify-content-center flex-column h-100">
             <h2 className="text-uppercase">Proudly</h2>
             <h1 className="text-uppercase p-c">Canadian</h1>
-            <h3 className="text-uppercase">Digitelizing Canada</h3>
+            <h3 className="text-uppercase"><span>Digitelizing Canada</span><img src={imgLoadingTextSep} alt="Marktwiz" className="img-fluid position-absolute"/></h3>
           </div>
         </section>
 
         <section id="splash" className="h-100">
           <div className="content d-flex align-items-center justify-content-center flex-column h-100">
+          <div className="text-center">
             <h3 className="text-uppercase">We are</h3>
-            <h2 className="text-uppercase p-c">
-                <span>M</span>
-                <span>a</span>
-                <span>r</span>
-                <span>k</span>
-                <span>t</span>
-                <span>w</span>
-                <span>i</span>
-                <span>z</span>
-            </h2>
+              <h2 className="text-uppercase p-c">
+                  <span>M</span>
+                  <span>a</span>
+                  <span>r</span>
+                  <span>k</span>
+                  <span>t</span>
+                  <span>w</span>
+                  <span>i</span>
+                  <span>z</span>
+              </h2>
+            </div>
             <div className="circle-2"></div>
             <div className="circle-1"></div>
           </div>
         </section>
 
         <section id="slider-wrapper" className="position-relative">
-          <div className="logo position-absolute text-center text-lg-left w-100" style={{zIndex: "10"}}>
+          <div className="headerMain position-absolute text-center text-lg-left w-100" style={{zIndex: "10"}}>
             <div className="container-fluid">
               <div className="row">
-                <div className="col-12 pl-lg-5 pl-md-2 p-4">
+                <div className="main-logo">
                   <a onClick={() => this.props.history.push("./")}>
                     <img src={Imglogo} alt="Marktwiz" className="img-fluid" /></a>
                 </div>
@@ -82,10 +86,10 @@ export default class Home extends Component {
               <div id="slide-1" className="section content d-flex align-items-center justify-content-center flex-column h-100">
               <div className="container-fluid h-100">
                 <div className="row h-100">
-                  <div className="align-items-center col-lg-5 d-flex pl-lg-5 pl-md-2">
+                  <div className="align-items-center col-lg-6 d-flex content-slider">
                     <h3>Digital Products & Services</h3>
                   </div>
-                  <div className="col-lg-7 d-flex justify-content-end align-items-center">
+                  <div className="col-lg-6 d-flex justify-content-end align-items-center P-0">
                     <img src={imgDigitalProducts} alt="Marktwiz" className="img-fluid movingImg" />
                   </div>
                 </div>
@@ -94,10 +98,10 @@ export default class Home extends Component {
               <div id="slide-2" className="section content d-flex align-items-center justify-content-center flex-column h-100">
               <div className="container-fluid h-100">
                 <div className="row h-100">
-                  <div className="align-items-center col-lg-5 d-flex pl-lg-5 pl-md-2">
-                    <h3>Innovative Approach & Strategy</h3>
+                  <div className="align-items-center col-lg-7 d-flex content-slider">
+                    <h3>Innovative <br></br>Approach & Strategy</h3>
                   </div>
-                  <div className="col-lg-7 d-flex justify-content-end align-items-end">
+                  <div className="col-lg-5 d-flex justify-content-end align-items-end">
                     <img src={imgInnovative} alt="Marktwiz" className="img-fluid movingImg" />
                   </div>
                 </div>
@@ -106,28 +110,34 @@ export default class Home extends Component {
               <div id="slide-3" className="section content d-flex align-items-center justify-content-center flex-column h-100">
               <div className="container-fluid h-100">
                 <div className="row h-100">
-                  <div className="align-items-start col-lg-5 d-flex flex-column justify-content-center pl-lg-5 pl-md-2">
-                    <h3>Together We Create Magic</h3>
-                    <button className="btn mt-5" onClick={() => this.props.history.push('/services/')}>Check Services <img src={imgArrowBlack} alt="arrow" className="img-fluid" /></button>
+                  <div className="align-items-start col-lg-7 d-flex flex-column justify-content-center content-slider">
+                    <h3>Together <br></br>We Create Magic</h3>
+                    <button className="btn checkServiceBtn" onClick={() => this.props.history.push('/services/')}>Check Services <img src={imgArrowBlack} alt="arrow" className="img-fluid" /></button>
                   </div>
-                  <div className="col-lg-7 d-flex justify-content-end align-items-end">
-                    <img src={imgMagic} alt="Marktwiz" className="img-fluid movingImg" />
+                  <div className="col-lg-5 d-flex justify-content-end align-items-end">
+                    <img src={imgMagic} alt="Marktwiz" className="img-fluid checkAllServiceSlide movingImg" />
                   </div>
                 </div>
               </div>
             </div>
               <div id="slide-4" className="section content d-flex align-items-center justify-content-center flex-column h-100">
               <div className="container-fluid h-100">
-                <div className="row h-100">
-                  <img src={imgContact} alt="Marktwiz" className="img-fluid movingImg" style={{width: "100%", position: "absolute", maxWidth: " 70%", top: "-30px"}}/>
-                  <div className="align-items-start col-lg-6 d-flex flex-column justify-content-center pl-lg-5 pl-md-2">
-                    <h3>Curious enough to know more?</h3>
+                <div className="row h-100 curious-page">
+                  <img src={imgContact} alt="Marktwiz" className="img-fluid movingImg" style={{width: "100%", position: "absolute", maxWidth: " 50%", top: "-30px"}}/>
+                  <div className="align-items-start col-lg-6 d-flex flex-column justify-content-center  content-slider">
+                    <h3>Curious enough <br></br>to know more?</h3>
                     <form action="" className="d-flex flex-column pt-5 w-100">
-                      <label className="p-c font-weight-bolder">Schedule A Coffee</label>
-                      <input type="text" placeholder="Full Name" name="Full Name" />
+                      <label className="formTitle">Schedule A Coffee</label>
+                      <div className="formGroup">
+                        <input type="text" placeholder="Full Name" name="Full Name" />
+                      </div>
+                      <div className="formGroup">
                       <input type="email" placeholder="Email" name="email" />
-                      <input type="text" placeholder="Phone Number" name="phone number" />
-                      <a href="#!" className="btn mt-5">Let's Meet <img src={imgArrowBlack} alt="arrow" className="img-fluid" /></a>
+                      </div>
+                      <div className="formGroup">
+                        <input type="text" placeholder="Phone Number" name="phone number" />
+                      </div>
+                      <a href="#!" className="btn submitFromBtn">Let's Meet <img src={imgArrowBlack} alt="arrow" className="img-fluid" /></a>
                     </form>
                   </div>
                 </div>

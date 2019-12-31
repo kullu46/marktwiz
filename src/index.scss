@@ -2,9 +2,8 @@
 //ant design
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC&display=swap');
 @import "./assets/theme/theme-mixin";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+
 // Bootstrap scss
 
 @import "./assets/scss/functions";
@@ -13,6 +12,7 @@
 @import "./assets/scss/reboot";
 @import "./assets/scss/root";
 @import "./assets/scss/bootstrap-grid";
+@import "./assets/theme/css/animate";
 
 @import "./assets/theme/theme_fonts";
 @import "./assets/scss/type";

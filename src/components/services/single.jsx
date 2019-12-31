@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Imglogo from '../../assets/images/logo.png';
+import ImgLogoPages from '../../assets/images/logo-for-pages.png';
+import imgArrowBlack from '../../assets/images/home-slider/arrow-b.png';
 export default class SingleService extends Component {
 	componentDidMount() {
 		document.body.classList.add('page-all-services');
@@ -16,20 +18,20 @@ export default class SingleService extends Component {
   render() {
     return (
 			<div className="page-services">
-				<div className="logo position-absolute text-center text-lg-left w-100" style={{zIndex: "10"}}>
+			<div className="headerMain position-absolute text-center text-lg-left w-100" style={{zIndex: "10"}}>
 				<div className="container-fluid">
-					<div className="row">
-						<div className="col-12 pl-lg-5 pl-md-2 p-4">
-							<a onClick={() => this.props.history.push("./")}>
-							<img src={Imglogo} alt="Marktwiz" className="img-fluid" /></a>
-						</div>
+				<div className="row">
+					<div className="main-logo">
+					<a onClick={() => this.props.history.push("./")}>
+						<img src={Imglogo} alt="Marktwiz" className="img-fluid" /></a>
 					</div>
+				</div>
 				</div>
 			</div>
 			<section id="website-mobile-section">
 				<div class="wrap">
 					<div class="row">
-						<div class="inner-content">
+						<div class="inner-content p-0">
 								<h1>Website &amp; Mobile App</h1>
 								<p>First point of connection of your clientele is, retention wise the most vital digital interaction. With distinct designs, intelligent development, on-target content, and a user friendly interface we ensure the perfect first impression.</p>
 												<ul>
@@ -98,6 +100,12 @@ export default class SingleService extends Component {
 					</div>
 				</div>
 			</section>
+			<div class="view-service-wrap">				
+				<a href="/services" className="btn AllServiceBtn">All Serives <img src={imgArrowBlack} alt="arrow" className="img-fluid" /></a>
+			</div>
+			<div className="top-image kenburns">
+				<img src={ImgLogoPages} alt="" width="" height=""/>
+			</div>
 			</div>
     );
   }

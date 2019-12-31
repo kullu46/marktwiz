@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Imglogo from '../../assets/images/logo.png';
+import ImgLogoPages from '../../assets/images/logo-for-pages.png';
+
 export default class Services extends Component {
 	componentDidMount() {
 		document.body.classList.add('page-all-services');
@@ -17,14 +19,14 @@ export default class Services extends Component {
   render() {
     return (
 			<div className="page-services">
-				<div className="logo position-absolute text-center text-lg-left w-100" style={{zIndex: "10"}}>
+			<div className="headerMain position-absolute text-center text-lg-left w-100" style={{zIndex: "10"}}>
 				<div className="container-fluid">
-					<div className="row">
-						<div className="col-12 pl-lg-5 pl-md-2 p-4">
-							<a onClick={() => this.props.history.push("./")}>
-							<img src={Imglogo} alt="Marktwiz" className="img-fluid" /></a>
-						</div>
+				<div className="row">
+					<div className="main-logo">
+					<a onClick={() => this.props.history.push("./")}>
+						<img src={Imglogo} alt="Marktwiz" className="img-fluid" /></a>
 					</div>
+				</div>
 				</div>
 			</div>
 			<section className="services-list">
@@ -118,7 +120,7 @@ export default class Services extends Component {
 				</div>
 			</section>
 			<div className="top-image kenburns">
-				<img src="http://marktwiz.com/wp-content/themes/marktwiz/assets/images/logo-for-pages.png" alt="" width="" height=""/>
+				<img src={ImgLogoPages} alt="" width="" height=""/>
 			</div>
 		</div>
     );

@@ -31,17 +31,13 @@
 // Keyframes End
 
 
-section#loader {
+section#loader{
     width: 100%;
-    background: white;
-
     .petals {
-
         img[class*="petal-"] {
             position: absolute;
             transition: .5s opacity ease;
             opacity: 1;
-
             @media only screen and (max-width: 991px){
                 max-width: 50%;
             }
@@ -49,14 +45,12 @@ section#loader {
             &.petal-1 {
                 top: 60px;
                 left: 130px;
-
                 @media only screen and (max-width: 991px){
                     top: 30px;
                     left: 30px;
                     max-width: 60px;
                 }
             }
-
             &.petal-2 {
                 top: 85px;
                 left: calc(50% + 100px);
@@ -66,7 +60,6 @@ section#loader {
                     left: 50%;
                 }
             }
-
             &.petal-3 {
                 top: -20px;
                 right: 30px;
@@ -77,12 +70,10 @@ section#loader {
                     max-width: 80px;
                 }
             }
-
             &.petal-4 {
                 bottom: -20px;
                 left: -20px;
             }
-
             &.petal-5 {
                 bottom: 20px;
                 right: 30px;
@@ -97,34 +88,48 @@ section#loader {
     .content {
 
         h2 {
-            font-size: 3rem;
+            @include fontSize(50px);
             letter-spacing: 5px;
-            margin: 5px 0;
-
+            margin: 5px 0 0px;
             @media only screen and (max-width: 991px){
                 font-size: 1rem;
             }
         }
 
         h1 {
-            font-size: 5rem;
-            letter-spacing: 15px;
+            @include fontSize(110px);
+            letter-spacing: 23px;
             margin: 5px 0;
             transform: translateY(5px);
-
+            color: $red;
             @media only screen and (max-width: 991px){
                 font-size: 2rem;
             }
         }
 
         h3 {
-            font-size: 2rem;
+            @include fontSize(34px);
             letter-spacing: 4px;
             margin: 10px 0;
-
+            position: relative;
+            max-width: 890px;
+            width: 100%;
+            text-align: center;
             @media only screen and (max-width: 991px){
                 font-size: 1rem;
                 margin: 5px 0;
+            }
+            span{
+                background-color: $white;
+                padding: 0 20px;
+                position: relative;
+                z-index: 1;
+            }
+            img{
+                left: 0px;
+                right: 0px;
+                margin: auto;
+                top: 21px;
             }
         }
     }
@@ -144,7 +149,6 @@ section#splash{
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top right;
-
 	.content{
 		position: relative;
 		z-index: 1;
@@ -172,19 +176,18 @@ section#splash{
 			font-size: 2rem;
 			letter-spacing: 8px;
 			opacity: 0;
-			transform: translateY(-15px);
-
+            transform: translateY(-15px);        
             @media only screen and (max-width: 991px){
                 font-size: 1em;
                 letter-spacing: 2px;
             }
 		}
 		h2{
-			font-size: 4rem;
+			@include fontSize(70px);
 			letter-spacing: 25px;
     		transition: .3s all ease;
     		transform-origin: center;
-
+            color: $red;
             @media only screen and (max-width: 991px){
                 font-size: 2em;
                 letter-spacing: 5px;
@@ -194,7 +197,7 @@ section#splash{
     			letter-spacing: 0;
     			opacity: 0;
     			margin-left: -30px;
-
+                padding: 0px 20px;
     			&:nth-child(2){
     				animation-delay: 2.2s;
     			}
@@ -235,9 +238,7 @@ section#splash{
 
 section#slider-wrapper{
 	opacity: 0;
-
 	.content{
-
         &.pp-section.pp-table{
             width: 0%;
             overflow: hidden;
@@ -251,11 +252,9 @@ section#slider-wrapper{
                 transition-duration: 1s;
             }
         }
-
         .pp-tableCell{
             width: 100vw;
         }
-
         &:before{
             content: '';
             position: absolute;
@@ -269,61 +268,93 @@ section#slider-wrapper{
             background-repeat: no-repeat;
             background-position: top right;
         }
-
+        .content-slider{
+            padding-left: 140px;
+        }
 		h3{
-			font-size: 4.5em;
+			@include fontSize(90px);
 		    font-weight: 600;
-		    margin: 0;
-
+            margin-bottom: 0px;
+            letter-spacing: 2px;
             @media only screen and (max-width: 991px){
                 font-size: calc(100vh/17);
                 margin-top: 80px;
                 max-width: 460px;
             }
-		}
-
-        a.btn, button.btn{
-            background: #dc0818;
+        }
+        .submitFromBtn{
+            background: $red;
             border-radius: 50px;
-            color: #fff;
+            color: $white;
             font-family: sans-serif;
             padding: 20px;
-            padding-right: 40px;
             display: flex;
             align-items: center;
             transition: .3s all ease;
-
-            @media only screen and (max-width: 991px){
-                margin: auto;
-                font-size: 14px;
-                padding: 15px;
-            }
-
+            @include fontSize(18px);     
+            outline: none !important;
+            box-shadow: none !important;
+            img{
+                margin-left: 30px;
+                transition: .3s all ease;
+                z-index: 0 !important;
+                top: 0;                
+            }       
             &:hover{
-                background: #dc0818;
-                border: 1px solid #dc0818;
-                color: white;
+                background: $red;
+                border: 1px solid $red;
+                color: $white;
                 padding-right: 0;
-
                 img{
-                    transform: translateX(20px);
-                    transition: .3s all ease;
+                    -moz-animation: bounce 3s infinite;
+                    -webkit-animation: bounce 3s infinite;
+                    animation: bounce 3s infinite;
+                    @include filtercolor(invert, 1);
                 }
             }
-
+        }
+        .checkServiceBtn{
+            margin-top: 70px;
+            padding: 20px;
+            width: 238px;
+            padding-left: 28px;
+            letter-spacing: 0.7px;
+            background: none;
+            border: 1px solid #232956;
+            outline: none !important;
+            box-shadow: none !important;
+            background: $red;
+            border-radius: 50px;
+            color: $white;
+            font-family: sans-serif;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            transition: .3s all ease;
+            @include fontSize(18px); 
             img{
-                margin-left: 20px;
+                margin-left: 30px;
                 transition: .3s all ease;
                 right: 0;
                 z-index: 0 !important;
+                top: 0;   
+                @include filtercolor(invert, 1);
+            }
+            &:hover{
+                background-color: $red;
+                border: 1px solid $red;
+                img{
+                    -moz-animation: bounce 3s infinite;
+                    -webkit-animation: bounce 3s infinite;
+                    animation: bounce 3s infinite;
+                }
             }
         }
-
 		img{
 		    position: relative;
-		    right: -30px;
+		    right: -35px;
             transform-origin: right center;
-
+            top: 40px;
             @media only screen and (max-width: 767px){
                 max-width: 90%;
                 z-index: -1 !important;
@@ -332,10 +363,12 @@ section#slider-wrapper{
             @media only screen and (max-width: 991px){
                 max-width: 60%;
             }
+            &.checkAllServiceSlide{
+                top: -15px;
+            }
 		}
 
         form{
-
             input{
                 padding: 15px;
                 padding-left: 0;
@@ -344,19 +377,22 @@ section#slider-wrapper{
                 margin-top: 25px;
                 outline: 0;
                 border-bottom: 1px solid #e0e0e0;
-                width: 70%;
+                width: 80%;
                 transition: .4s all cubic-bezier(1, 0.2, 0.25, 1);
-
+                font-family: 'Montserrat';
+                @include fontSize(18px);
                 @media only screen and (max-width: 991px){
                     margin-top: 20px;
                     width: 90%;
                     font-size: 14px;
                 }
-
                 &:focus{
-                    border-bottom: 1px solid red;
-                    width: 90%;
-                    transition: .4s all cubic-bezier(1, 0.2, 0.25, 1);
+                    border-bottom: 1px solid $red;
+                    width: 100%;
+                    transition: .4s all cubic-bezier(1, 0.2, 0.25, 1); 
+                    @include input-placeholder{
+                        opacity: 0;
+                    }                   
                 }
             }
 
@@ -365,12 +401,34 @@ section#slider-wrapper{
                 background: transparent;
                 color: #000;
                 margin-right: auto;
-
+                width: 238px;
+                margin-top: 30px;
                 @media only screen and (max-width: 991px){
                     border: 0;
-
                     &:hover{
                         border: 0;
+                    }
+                }
+            }
+        }
+        .curious-page{
+            padding-top: 140px;
+            .content-slider{
+                h3{
+                    @include fontSize(60px);
+                }
+                form{
+                    margin-top: 20px;
+                    max-width: 590px;
+                    .formGroup{
+                        margin-bottom: 40px;
+                    }
+                    .formTitle{
+                        @include fontSize(22px);
+                        font-family: 'Montserrat';
+                        color: $red;
+                        letter-spacing: 0.4px;
+                        margin-bottom: 30px;
                     }
                 }
             }
