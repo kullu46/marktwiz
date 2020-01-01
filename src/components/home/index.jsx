@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as MainActions from "../../redux/actions/main-actions";
 import imgPetals1 from '../../assets/images/home-slider/petals/1.png';
 import imgPetals2 from '../../assets/images/home-slider/petals/2.png';
 import imgPetals3 from '../../assets/images/home-slider/petals/3.png';
@@ -14,13 +18,13 @@ import imgLoadingTextSep from '../../assets/images/Shape-638.png';
 import imgArrowBlack from '../../assets/images/home-slider/arrow-b.png';
 import Imglogo from '../../assets/images/logo.png';
 
-//import imgBg from '../../assets/images/home-slider/bg.png';
-export default class Home extends Component {
+class Home extends Component {
   state = {
-      jsLoaded: false
+      jsLoaded: false,
+      pageLoaded: false
     };
-
-  componentDidMount(){
+  componentDidMount(){    
+    document.body.classList.remove('page-all-services');
     document.body.classList.add('modal-open');
     let scriptExist = document.getElementById("custom-js");
     if(scriptExist){
@@ -33,43 +37,52 @@ export default class Home extends Component {
 		document.body.appendChild(script);
   }    
 
+  componentWillUnmount(){
+    this.props.pageLoad();
+  }
+
   render() {
     return (
-      <div className="HomeSliderMain">
-        <section id="loader" className="h-100"  style={{backgroundImage: "url(" + imgLoadingBg + ")"}}>
-          <div className="petals">
-            <img src={imgPetals1} alt="Marktwiz" className="img-fluid petal-1"/>
-            <img src={imgPetals2} alt="Marktwiz" className="img-fluid petal-2"/>
-            <img src={imgPetals3} alt="Marktwiz" className="img-fluid petal-3"/>
-            <img src={imgPetals4} alt="Marktwiz" className="img-fluid petal-4"/>
-            <img src={imgPetals5} alt="Marktwiz" className="img-fluid petal-5"/>
-          </div>
-          <div className="content d-flex align-items-center justify-content-center flex-column h-100">
-            <h2 className="text-uppercase">Proudly</h2>
-            <h1 className="text-uppercase p-c">Canadian</h1>
-            <h3 className="text-uppercase"><span>Digitelizing Canada</span><img src={imgLoadingTextSep} alt="Marktwiz" className="img-fluid position-absolute"/></h3>
-          </div>
-        </section>
-
-        <section id="splash" className="h-100">
-          <div className="content d-flex align-items-center justify-content-center flex-column h-100">
-          <div className="text-center">
-            <h3 className="text-uppercase">We are</h3>
-              <h2 className="text-uppercase p-c">
-                  <span>M</span>
-                  <span>a</span>
-                  <span>r</span>
-                  <span>k</span>
-                  <span>t</span>
-                  <span>w</span>
-                  <span>i</span>
-                  <span>z</span>
-              </h2>
+      <div className="HomeSliderMain transition-item">
+        {this.props.main.isAlreadyVisited === false ?
+          <section id="loader" className="h-100"  style={{backgroundImage: "url(" + imgLoadingBg + ")"}}>
+            <div className="petals">
+              <img src={imgPetals1} alt="Marktwiz" className="img-fluid petal-1"/>
+              <img src={imgPetals2} alt="Marktwiz" className="img-fluid petal-2"/>
+              <img src={imgPetals3} alt="Marktwiz" className="img-fluid petal-3"/>
+              <img src={imgPetals4} alt="Marktwiz" className="img-fluid petal-4"/>
+              <img src={imgPetals5} alt="Marktwiz" className="img-fluid petal-5"/>
             </div>
-            <div className="circle-2"></div>
-            <div className="circle-1"></div>
-          </div>
-        </section>
+            <div className="content d-flex align-items-center justify-content-center flex-column h-100">
+              <h2 className="text-uppercase">Proudly</h2>
+              <h1 className="text-uppercase p-c">Canadian</h1>
+              <h3 className="text-uppercase"><span>Digitelizing Canada</span><img src={imgLoadingTextSep} alt="Marktwiz" className="img-fluid position-absolute"/></h3>
+            </div>
+          </section>
+          : ''
+        }
+        {this.props.main.isAlreadyVisited === false ?
+          <section id="splash" className="h-100">
+            <div className="content d-flex align-items-center justify-content-center flex-column h-100">
+              <div className="text-center">
+                <h3 className="text-uppercase">We are</h3>
+                <h2 className="text-uppercase p-c">
+                    <span>M</span>
+                    <span>a</span>
+                    <span>r</span>
+                    <span>k</span>
+                    <span>t</span>
+                    <span>w</span>
+                    <span>i</span>
+                    <span>z</span>
+                </h2>
+              </div>
+              <div className="circle-2"></div>
+              <div className="circle-1"></div>
+            </div>
+          </section>
+          : ''
+        }
 
         <section id="slider-wrapper" className="position-relative">
           <div className="headerMain position-absolute text-center text-lg-left w-100" style={{zIndex: "10"}}>
@@ -149,3 +162,13 @@ export default class Home extends Component {
     );
   }
 }
+Home.propTypes = {
+  pageLoad: PropTypes.func
+};
+function mapStateToProps(state){
+  return {...state};
+}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ ...MainActions }, dispatch)
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

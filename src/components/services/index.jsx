@@ -18,12 +18,12 @@ export default class Services extends Component {
 	}
   render() {
     return (
-			<div className="page-services">
+			<div className="page-services transition-item">
 			<div className="headerMain position-absolute text-center text-lg-left w-100" style={{zIndex: "10"}}>
 				<div className="container-fluid">
 				<div className="row">
 					<div className="main-logo">
-					<a onClick={() => this.props.history.push("./")}>
+					<a onClick={() => this.props.history.push("/")}>
 						<img src={Imglogo} alt="Marktwiz" className="img-fluid" /></a>
 					</div>
 				</div>

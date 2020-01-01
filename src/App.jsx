@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import routeOptions from "./routes/route";
+import PageTransition from "react-router-page-transition";
 import "./index.scss";
 import Header from "./components/header/index";
 import Footer from "./components/footer/index";
@@ -19,11 +20,13 @@ class App extends Component {
 
     return (
       <div className="app-container App">
-        <Header />
-        <Switch>
-          {routes}
-        </Switch>
-        <Footer />
+        <PageTransition timeout={500}>
+          <Header />
+              <Switch>
+                {routes}
+              </Switch>
+          <Footer />
+        </PageTransition>
       </div>
     );
   }
