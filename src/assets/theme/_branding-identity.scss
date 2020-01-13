@@ -31,13 +31,16 @@
         @include media-breakpoint-up(lg) {
             @include make-col(7);
         }
+        @include media-breakpoint-up(xl) {
+            padding: 0px;
+        }
         h1{
             margin-bottom: 30px;
             @include fontSize(40px);
             text-align: center;
             @include media-breakpoint-up(md) {
                 text-align: left;
-                padding: 0px 15px;
+                padding: 0px;
             }
             @media(min-width: 1400px) {
                 margin-bottom: 30px;
@@ -63,7 +66,7 @@
             text-align: center;
             @include media-breakpoint-up(md) {
                 text-align: left;
-                padding: 0px 15px;
+                padding: 0px;
             }
         }
         ul{
@@ -78,6 +81,7 @@
                 max-width: 100%;
                 margin: 0px;
                 margin-top: 30px;
+                margin-left: -15px;
             }
             @include media-breakpoint-up(lg) {
                 max-width: 780px;

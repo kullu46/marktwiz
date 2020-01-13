@@ -10,17 +10,11 @@ export default class Services extends Component {
 		this.props.history.push(url);
 		//console.log(url, title);
 	}
-	mouseleave = (e) => {
-		e.target.classList.remove('active');
-	}
-	mouseenter = (e) => {
-		e.target.classList.add('active');
-	}
   render() {
     return (
 			<div className="page-services transition-item">
 			<div className="headerMain position-absolute text-center text-lg-left w-100" style={{zIndex: "10"}}>
-				<div className="container-fluid">
+				<div className="wrap">
 				<div className="row">
 					<div className="main-logo">
 					<a onClick={() => this.props.history.push("/")}>

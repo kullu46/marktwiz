@@ -10,7 +10,7 @@ export default class DigitalStrategy extends Component {
     return (
 		<div className="page-services">
 			<div className="headerMain position-absolute text-center text-lg-left w-100" style={{zIndex: "10"}}>
-				<div className="container-fluid">
+				<div className="wrap">
 				<div className="row">
 					<div className="main-logo">
 					<a onClick={() => this.props.history.push("/")}>
