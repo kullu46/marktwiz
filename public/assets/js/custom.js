@@ -85,12 +85,27 @@ if($(document).find("#loader").length){
 	loadingTl.fromTo('#slider-wrapper #slide-4 .movingImg', 25, {scale:.9}, {scale: 1.1}, "ease: Power2.easeInOut")
 }
 $(document).ready(function() {
+	if($('#pp-nav').length){
+		$('#pp-nav').remove();
+	}
 	if($('#slides').length){
 			$('#slides').pagepiling({
 				direction: 'horizontal',
 				setAllowScrolling: true,
 				sectionsColor: ['white', 'white', '#0a1143', 'white'],
 				navigation: false,
+		});
+	}
+	if($('#services').length){
+		$('#services').pagepiling({
+			direction: 'horizontal',
+			setAllowScrolling: true,
+			sectionsColor: ['white', 'white', '#0a1143', 'white'],
+			navigation: {
+				'textColor': '#fff',
+				'bulletsColor': '#fff',
+				'position': 'center',
+			}
 		});
 	}
 });

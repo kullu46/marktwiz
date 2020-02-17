@@ -5,6 +5,9 @@ import ImgLogoPages from '../../assets/images/logo-for-pages.png';
 export default class Services extends Component {
 	componentDidMount() {
 		document.body.classList.add('page-all-services');
+		if(document.getElementById('pp-nav')){
+			document.getElementById('pp-nav').remove();
+		}
 	}
 	hashChange (url, title) {
 		this.props.history.push(url);
