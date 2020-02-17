@@ -1,0 +1,449 @@
+@mixin shadow1{
+    -webkit-box-shadow: 1px 3px 24px rgba(0,0,0,0.14);
+    -moz-box-shadow: 1px 3px 24px  rgba(0,0,0,0.14);
+    box-shadow: 1px 3px 24px rgba(0,0,0,0.14);
+}
+@mixin shadow-light{
+    -webkit-box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.07);
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.07);
+}
+@mixin shadow2 {
+    -webkit-box-shadow: 2px 2px 37px 1px rgba(0,0,0,0.29);
+    -moz-box-shadow: 2px 2px 37px 1px rgba(0,0,0,0.29);
+    box-shadow: 2px 2px 37px 1px rgba(0,0,0,0.29);
+}
+@mixin font-main($size, $weight, $color, $line-height){
+    font-size: $size;
+    font-weight:$weight;
+    color:$color;
+    line-height: $line-height;
+}
+@mixin font-normal($weight, $line-height, $case){
+    font-weight:$weight;
+    line-height: $line-height;
+    text-transform: $case;
+}
+@mixin small-border{
+        content:' ';
+        display:block;
+        border:1px solid #5b5b62;
+        width:100px;
+        margin:0 auto;
+        margin-top:20px;
+}
+@mixin display-property($width, $display, $text-align){
+    width:$width;
+    display:$display;
+    text-align: $text-align;
+}
+@mixin theme-button {
+    background-color: $theme-main-color;
+    border-radius:0;
+    color:$white;
+    @include fontSize(16px);
+    margin-top:10px;
+    font-weight: 600;
+    text-align: center;
+    padding: 15px 25px;
+    display:inline-block;
+    text-decoration: none;
+    @include shadow2;
+    cursor: pointer;
+        &:hover{
+            background-color: $theme-main-color-hover;
+            color:$white;
+        }
+}
+@mixin theme-button-outline {
+  background-color: transparent;
+  border-radius:4px;
+  border: 1px solid $white;
+  color:$white;
+  @include fontSize(16px);
+  font-weight: 600;
+  margin-top:10px;
+  text-align: center;
+  padding: 15px 25px;
+  display:inline-block;
+  text-decoration: none;
+  @include shadow-light;
+  cursor: pointer;
+      &:hover{
+          background-color: $theme-main-color-hover;
+          color:$white;
+          border: 1px solid $theme-main-color-hover;
+      }
+}
+@mixin button-blue {
+  background: $dark-blue;
+  border-radius:3px;
+  color:$white;
+  @include fontSize(16px);
+  margin-top:10px;
+  text-align: center;
+  font-weight: 400;
+  padding: 16px 40px;
+  display:inline-block;
+  text-decoration: none;
+  @include shadow2;
+  @include transition (all 0.4s ease);
+  &:hover{
+    background:  $green;
+    color:$white;
+      
+  }
+}
+
+@mixin input{
+    display:block;
+    border:1px solid $gray-400;
+    width:100%;
+    border-radius: 0;
+    height: 44px;
+    line-height: 40px;
+    font-size: .9rem;
+    padding: 0 10px;
+}
+
+@mixin input-textarea {
+    border:1px solid $gray-400;
+    display: block;
+    height: 120px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    -ms-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+  }
+  
+@mixin transition($args) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
+  
+  @mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+  }
+  
+  @mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+
+  @mixin custom-shadow($boxShadow) {
+    -webkit-box-shadow: $boxShadow;
+	   -moz-box-shadow: $boxShadow;
+	        box-shadow: $boxShadow;
+  }
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin inline-flex {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit Box fallback.
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+
+@mixin flex-flow($values: (row nowrap)) {
+  // No Webkit Box fallback.
+  -webkit-flex-flow: $values;
+  -moz-flex-flow: $values;
+  -ms-flex-flow: $values;
+  flex-flow: $values;
+}
+
+@mixin order($int: 0) {
+  -webkit-box-ordinal-group: $int + 1;
+  -webkit-order: $int;
+  -moz-order: $int;
+  -ms-flex-order: $int;
+  order: $int;
+}
+
+@mixin flex-grow($int: 0) {
+  -webkit-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -moz-flex-grow: $int;
+  -ms-flex-positive: $int;
+  flex-grow: $int;
+}
+
+@mixin flex-shrink($int: 1) {
+  -webkit-flex-shrink: $int;
+  -moz-flex-shrink: $int;
+  -ms-flex-negative: $int;
+  flex-shrink: $int;
+}
+
+@mixin flex-basis($value: auto) {
+  -webkit-flex-basis: $value;
+  -moz-flex-basis: $value;
+  -ms-flex-preferred-size: $value;
+  flex-basis: $value;
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg;
+
+  // Box-Flex only supports a flex-grow value so let's grab the
+  // first item in the list and just return that.
+  @if type-of($fg) == 'list' {
+    $fg-boxflex: nth($fg, 1);
+  }
+
+  -webkit-box-flex: $fg-boxflex;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg-boxflex;
+  -moz-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  align-items: $value;
+}
+
+@mixin align-self($value: auto) {
+  // No Webkit Box Fallback.
+  -webkit-align-self: $value;
+  -moz-align-self: $value;
+  @if $value == flex-start {
+    -ms-flex-item-align: start;
+  } @else if $value == flex-end {
+    -ms-flex-item-align: end;
+  } @else {
+    -ms-flex-item-align: $value;
+  }
+  align-self: $value;
+}
+
+@mixin align-content($value: stretch) {
+  // No Webkit Box Fallback.
+  -webkit-align-content: $value;
+  -moz-align-content: $value;
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+  align-content: $value;
+}
+
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
+@mixin fontSize($size) {
+    font-size: $size; //Fallback in px
+    font-size: calculateRem($size);
+}
+
+@mixin filter($filter) {
+  -ms-filter: $filter;
+  -webkit-filter: $filter;
+  -moz-filter: $filter;
+  -o-filter: $filter;
+  filter: $filter;
+}
+
+@mixin bg-opacity($color, $opacity) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+
+@mixin button-green {
+  background: $green;
+  border-radius:4px;
+  color:$white;
+  @include fontSize(18px);
+  margin-top:10px;
+  text-align: center;
+  padding: 16px 40px;
+  display:inline-block;
+  text-decoration: none;
+  @include shadow2;
+      &:hover{
+          background: linear-gradient(to right, #61a932, #428a13);
+          color:$white;
+          
+      }
+}
+
+@mixin button-blue {
+background: $blue;
+border-radius:4px;
+color:$white;
+@include fontSize(18px);
+margin-top:10px;
+text-align: center;
+padding: 16px 40px;
+display:inline-block;
+text-decoration: none;
+cursor: pointer;
+@include shadow2;
+    &:hover{
+        background: linear-gradient(to right, #053a8a, #295394);
+        color:$white;
+        
+    }
+}
+
+@mixin gradient-bg($value){
+  @if type_of($value) == 'color' {
+    background: $value;
+  }
+  @else if type_of($value) == 'string' {
+    background: -webkit-linear-gradient(#{$value});
+    background: -moz-linear-gradient(#{$value});
+    background: linear-gradient(#{$value});
+  }
+  @else {
+    @error "Invalid parameter. Mixin expects a color or color function or gradient as value. ";
+  }
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: -moz-linear-gradient($direction, $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@mixin bg-opacity($color, $opacity) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+@mixin button-outline{
+  border: 1px solid $gray-200;
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: inline-block;
+  color: $black;
+  text-decoration: none;
+  @include transition ( all 0.3s ease-in-out);  
+  @include shadow-light;
+  @include fontSize(16px);
+  i{
+    margin-left: 10px;
+    color: $theme-main-color;
+    position: relative;
+    top: 2px;
+  }
+  &:hover{
+    background-color: $theme-main-color;
+    color: $white;
+    i{
+      color: $white;
+      @include animation(bounceRight 2s infinite);
+    }
+  }
+}
