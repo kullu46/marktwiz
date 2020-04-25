@@ -7,7 +7,7 @@ import App from "./App.jsx";
 
 hydrate(
   <Provider store={store}>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <App />
     </Router>
   </Provider>,

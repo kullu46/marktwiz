@@ -31,7 +31,7 @@ class Home extends Component {
       scriptExist.parentElement.removeChild(scriptExist);
     }
 		const script = document.createElement("script");
-    script.src = "/assets/js/custom.js";
+    script.src = process.env.PUBLIC_URL+"/assets/js/custom.js";
     script.id = "custom-js";
     script.async = true;
 		document.body.appendChild(script);
